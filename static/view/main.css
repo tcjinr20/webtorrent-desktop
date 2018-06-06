@@ -964,3 +964,9 @@ video::-webkit-media-text-track-container {
   width: 100%;
   height: 100%;
 }
+
+.navitem{
+  display: inline-block;
+  margin: 0px 15px;
+  cursor: pointer;
+}

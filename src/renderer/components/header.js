@@ -25,6 +25,10 @@ class Header extends React.Component {
             chevron_right
           </i>
         </div>
+        <div className='nav left float-left'>
+          <li className='navitem' onClick={dispatcher('goto', 'index')}>视频列表</li>
+          <li className='navitem' onClick={dispatcher('goto', 'home')}>观看列表</li>
+        </div>
         <div className='nav right float-right'>
           {this.getAddButton()}
         </div>

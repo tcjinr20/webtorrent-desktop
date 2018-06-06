@@ -314,6 +314,7 @@ const dispatchHandlers = {
   'back': () => state.location.back(),
   'forward': () => state.location.forward(),
   'cancel': () => state.location.cancel(),
+  'goto': (url) => state.location.go({ url: url }),
 
   // Controlling the window
   'setDimensions': setDimensions,

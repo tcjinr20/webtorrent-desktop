@@ -1,4 +1,4 @@
-const appConfig = require('application-config')('WebTorrent')
+const appConfig = require('application-config')('yupihuasheng')
 const path = require('path')
 const {EventEmitter} = require('events')
 

@@ -10,8 +10,10 @@ const Header = require('../components/header')
 
 // Perf optimization: Needed immediately, so do not lazy load it below
 const TorrentListPage = require('./torrent-list-page')
+const VodWebList = require('./vod-web-list')
 
 const Views = {
+  'index': createGetter(() => VodWebList),
   'home': createGetter(() => TorrentListPage),
   'player': createGetter(() => require('./player-page')),
   'create-torrent': createGetter(() => require('./create-torrent-page')),

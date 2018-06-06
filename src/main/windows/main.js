@@ -16,7 +16,8 @@ const main = module.exports = {
 
 const electron = require('electron')
 const debounce = require('debounce')
-
+const path = require('path')
+const url = require('url')
 const app = electron.app
 
 const config = require('../../config')
@@ -107,6 +108,29 @@ function init (state, options) {
     // }
     app.quit()
   })
+
+  win.webContents.session.on('will-download', (event, item, webContents) => {
+    var file_name = url.parse(item.getURL()).pathname.split('/').pop()
+    var tpath = path.join(config.DEFAULT_DOWNLOAD_PATH, file_name)
+    item.setSavePath(tpath)
+    item.on('updated', (event, state) => {
+      if (state === 'interrupted') {
+      } else if (state === 'progressing') {
+        if (item.isPaused()) {
+          console.log('Download is paused')
+        } else {
+          // console.log(`Received bytes: ${item.getReceivedBytes()}`)
+        }
+      }
+    })
+    item.once('done', (event, state) => {
+      if (state === 'completed') {
+        dispatch('addTorrent', tpath)
+      } else {
+      }
+    })
+  })
+
 }
 
 function dispatch (...args) {

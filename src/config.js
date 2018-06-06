@@ -1,15 +1,16 @@
-const appConfig = require('application-config')('WebTorrent')
+const appConfig = require('application-config')('yupihuasheng')
 const path = require('path')
 const electron = require('electron')
 const arch = require('arch')
 
-const APP_NAME = 'WebTorrent'
-const APP_TEAM = 'WebTorrent, LLC'
-const APP_VERSION = require('../package.json').version
-
+const APP_NAME = '鱼皮花生'
+const APP_TEAM = '亿鸣龙, LLC'
+const PACKAGE = require('../package.json')
+const APP_VERSION = PACKAGE.version
+const MAIN_URL = PACKAGE.author.url
 const IS_TEST = isTest()
 const PORTABLE_PATH = IS_TEST
-  ? path.join(process.platform === 'win32' ? 'C:\\Windows\\Temp' : '/tmp', 'WebTorrentTest')
+  ? path.join(process.platform === 'win32' ? 'C:\\Windows\\Temp' : '/tmp', 'yupihuasheng')
   : path.join(path.dirname(process.execPath), 'Portable Settings')
 const IS_PRODUCTION = isProduction()
 const IS_PORTABLE = isPortable()
@@ -18,14 +19,14 @@ const UI_HEADER_HEIGHT = 38
 const UI_TORRENT_HEIGHT = 100
 
 module.exports = {
-  ANNOUNCEMENT_URL: 'https://webtorrent.io/desktop/announcement',
-  AUTO_UPDATE_URL: 'https://webtorrent.io/desktop/update',
-  CRASH_REPORT_URL: 'https://webtorrent.io/desktop/crash-report',
-  TELEMETRY_URL: 'https://webtorrent.io/desktop/telemetry',
+  ANNOUNCEMENT_URL: MAIN_URL + '/desktop/announcement',
+  AUTO_UPDATE_URL: MAIN_URL + '/desktop/update',
+  CRASH_REPORT_URL: MAIN_URL + '/desktop/crash-report',
+  TELEMETRY_URL: MAIN_URL + '/desktop/telemetry',
 
   APP_COPYRIGHT: 'Copyright © 2014-2018 ' + APP_TEAM,
-  APP_FILE_ICON: path.join(__dirname, '..', 'static', 'WebTorrentFile'),
-  APP_ICON: path.join(__dirname, '..', 'static', 'WebTorrent'),
+  APP_FILE_ICON: path.join(__dirname, '..', 'static', 'yupihuashengFile'),
+  APP_ICON: path.join(__dirname, '..', 'static', 'yupihuasheng'),
   APP_NAME: APP_NAME,
   APP_TEAM: APP_TEAM,
   APP_VERSION: APP_VERSION,
@@ -35,34 +36,10 @@ module.exports = {
 
   DEFAULT_TORRENTS: [
     {
-      testID: 'bbb',
-      name: 'Big Buck Bunny',
-      posterFileName: 'bigBuckBunny.jpg',
-      torrentFileName: 'bigBuckBunny.torrent'
-    },
-    {
       testID: 'cosmos',
       name: 'Cosmos Laundromat (Preview)',
       posterFileName: 'cosmosLaundromat.jpg',
       torrentFileName: 'cosmosLaundromat.torrent'
-    },
-    {
-      testID: 'sintel',
-      name: 'Sintel',
-      posterFileName: 'sintel.jpg',
-      torrentFileName: 'sintel.torrent'
-    },
-    {
-      testID: 'tears',
-      name: 'Tears of Steel',
-      posterFileName: 'tearsOfSteel.jpg',
-      torrentFileName: 'tearsOfSteel.torrent'
-    },
-    {
-      testID: 'wired',
-      name: 'The WIRED CD - Rip. Sample. Mash. Share',
-      posterFileName: 'wiredCd.jpg',
-      torrentFileName: 'wiredCd.torrent'
     }
   ],
 
@@ -74,7 +51,7 @@ module.exports = {
   GITHUB_URL_ISSUES: 'https://github.com/webtorrent/webtorrent-desktop/issues',
   GITHUB_URL_RAW: 'https://raw.githubusercontent.com/webtorrent/webtorrent-desktop/master',
 
-  HOME_PAGE_URL: 'https://webtorrent.io',
+  HOME_PAGE_URL: MAIN_URL,
 
   IS_PORTABLE: IS_PORTABLE,
   IS_PRODUCTION: IS_PRODUCTION,
@@ -87,10 +64,11 @@ module.exports = {
   STATIC_PATH: path.join(__dirname, '..', 'static'),
   TORRENT_PATH: path.join(getConfigPath(), 'Torrents'),
 
-  WINDOW_ABOUT: 'file://' + path.join(__dirname, '..', 'static', 'about.html'),
-  WINDOW_MAIN: 'file://' + path.join(__dirname, '..', 'static', 'main.html'),
-  WINDOW_WEBTORRENT: 'file://' + path.join(__dirname, '..', 'static', 'webtorrent.html'),
-
+  WINDOW_ABOUT: 'file://' + path.join(__dirname, '..', 'static', 'view', 'about.html'),
+  WINDOW_MAIN: 'file://' + path.join(__dirname, '..', 'static', 'view', 'main.html'),
+  WINDOW_WEBTORRENT: 'file://' + path.join(__dirname, '..', 'static', 'view', 'yupihuasheng.html'),
+  WINDOW_PRELOAD: 'file://' + path.join(__dirname, '.','renderer', 'preload.js'),
+  WINDOW_WEB: 'http://www.tcc.com/?v=2',
   WINDOW_INITIAL_BOUNDS: {
     width: 500,
     height: UI_HEADER_HEIGHT + (UI_TORRENT_HEIGHT * 6) // header + 6 torrents

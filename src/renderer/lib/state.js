@@ -150,7 +150,7 @@ function setupStateSaved (cb) {
   })
 
   parallel(tasks, function (err) {
-    if (err) return cb(err)
+    // if (err) return cb(err)
     cb(null, saved)
   })
 

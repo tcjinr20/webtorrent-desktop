@@ -10,7 +10,6 @@
 
 html,
 body {
-  background: rgb(40, 40, 40);
   cursor: default;
   height: 100%;
   margin: 0;
@@ -91,7 +90,18 @@ table {
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: url('MaterialIcons-Regular.woff2') format('woff2');
+  src: url('../MaterialIcons-Regular.woff2') format('woff2');
+}
+
+.menu{
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  margin: 0px 10px;
+  cursor: pointer;
+  font-style: normal;
 }
 
 .icon {
@@ -106,7 +116,6 @@ table {
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
-  opacity: 0.85;
 
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -949,4 +958,9 @@ video::-webkit-media-text-track-container {
 
 .control * {
   cursor: default !important;
+}
+
+.index,webview {
+  width: 100%;
+  height: 100%;
 }

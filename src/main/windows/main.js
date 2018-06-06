@@ -94,17 +94,18 @@ function init (state, options) {
   }, 1000))
 
   win.on('close', e => {
-    if (process.platform !== 'darwin') {
-      const tray = require('../tray')
-      if (!tray.hasTray()) {
-        app.quit()
-        return
-      }
-    }
-    if (!app.isQuitting) {
-      e.preventDefault()
-      hide()
-    }
+    // if (process.platform !== 'darwin') {
+    //   const tray = require('../tray')
+    //   if (!tray.hasTray()) {
+    //     app.quit()
+    //     return
+    //   }
+    // }
+    // if (!app.isQuitting) {
+    //   e.preventDefault()
+    //   hide()
+    // }
+    app.quit()
   })
 }
 

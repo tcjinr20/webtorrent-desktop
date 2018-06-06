@@ -1,11 +1,11 @@
 {
-  "name": "webtorrent-desktop",
-  "description": "WebTorrent, the streaming torrent client. For Mac, Windows, and Linux.",
-  "version": "0.20.0",
+  "name": "yupihuasheng",
+  "description": "鱼皮花生的桌面mac，win应用",
+  "version": "1.00.1",
   "author": {
-    "name": "WebTorrent, LLC",
-    "email": "feross@webtorrent.io",
-    "url": "https://webtorrent.io"
+    "name": "yupihuasheng, LLC",
+    "email": "tcjinr20@163.com",
+    "url": "http://cigomo.com"
   },
   "bugs": {
     "url": "https://github.com/webtorrent/webtorrent-desktop/issues"
@@ -46,7 +46,7 @@
     "simple-get": "^2.0.0",
     "srt-to-vtt": "^1.1.1",
     "vlc-command": "^1.0.1",
-    "webtorrent": "0.x",
+    "webtorrent": "latest",
     "winreg": "^1.2.0",
     "zero-fill": "^2.2.3"
   },
@@ -55,7 +55,7 @@
     "buble": "^0.19.3",
     "cross-zip": "^2.0.1",
     "depcheck": "^0.6.4",
-    "electron": "1.6.16",
+    "electron": "2.0.0",
     "electron-osx-sign": "0.4.3",
     "electron-packager": "~8.5.1",
     "electron-winstaller": "~2.5.2",
@@ -75,7 +75,7 @@
   "engines": {
     "node": ">=4.0.0"
   },
-  "homepage": "https://webtorrent.io",
+  "homepage": "http://cigomo.com",
   "keywords": [
     "desktop",
     "electron",
@@ -92,7 +92,7 @@
     "appdmg": "^0.4.3"
   },
   "private": true,
-  "productName": "WebTorrent",
+  "productName": "yupihuasheng",
   "repository": {
     "type": "git",
     "url": "git://github.com/webtorrent/webtorrent-desktop.git"

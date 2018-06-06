@@ -191,11 +191,13 @@ function init () {
   ipc.on('setAllowNav', (e, ...args) => menu.setAllowNav(...args))
 
   /**
-   *  webview message main.send('addTorrentUrl', ...args)
+   *  webview message preload.js
    */
 
   ipc.on('addTorrentUrl', (e, ...args) => main.win.webContents.downloadURL(...args))
   ipc.on('addManget', (e, ...args) => main.dispatch('addTorrent', ...args))
+  ipc.on('addVod', (e, ...args) => main.dispatch('addVod', ...args))
+
   /**
    * External Media Player
    */

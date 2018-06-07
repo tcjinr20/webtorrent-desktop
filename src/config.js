@@ -68,7 +68,7 @@ module.exports = {
   WINDOW_MAIN: 'file://' + path.join(__dirname, '..', 'static', 'view', 'main.html'),
   WINDOW_WEBTORRENT: 'file://' + path.join(__dirname, '..', 'static', 'view', 'yupihuasheng.html'),
   WINDOW_PRELOAD: 'file://' + path.join(__dirname, '.','renderer', 'preload.js'),
-  WINDOW_WEB: 'http://www.tcc.com/?v=5',
+  WINDOW_WEB: 'http://www.baidu.com',
   WINDOW_INITIAL_BOUNDS: {
     width: 500,
     height: UI_HEADER_HEIGHT + (UI_TORRENT_HEIGHT * 6) // header + 6 torrents

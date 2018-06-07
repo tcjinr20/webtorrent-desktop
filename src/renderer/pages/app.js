@@ -73,7 +73,7 @@ class App extends React.Component {
         <div className={'app ' + cls.join(' ')}>
           <Header state={state} />
           {this.getErrorPopover()}
-          <div key='content' className='content'>{this.getView()}</div>
+          <div key='content' className={'content ' + state.location.url()}>{this.getView()}</div>
           {this.getModal()}
         </div>
       </MuiThemeProvider>
